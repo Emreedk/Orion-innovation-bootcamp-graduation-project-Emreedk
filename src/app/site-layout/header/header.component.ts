@@ -27,6 +27,7 @@ export class HeaderComponent implements OnInit {
     this.userDataService.login.subscribe((data) => {
       this.isUserLoggedIn = data;
     });
+    console.log(`Login status on header : ${this.isUserLoggedIn}`);
 
     this.userDataService.isAdmin.subscribe((data) => {
       this.isAdmin = data;

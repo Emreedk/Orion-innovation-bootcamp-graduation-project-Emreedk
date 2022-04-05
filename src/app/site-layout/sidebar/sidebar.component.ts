@@ -15,8 +15,7 @@ export class SidebarComponent implements OnInit {
   urlStatus: boolean;
   constructor(
     private productService: ProductService,
-    private userDataService: UserDataService,
-    private router: Router
+    private userDataService: UserDataService
   ) {}
 
   ngOnInit(): void {
@@ -32,16 +31,6 @@ export class SidebarComponent implements OnInit {
       this.urlStatus = data;
     });
 
-    // if (!localStorage.getItem('user')) {
-    //   this.userDataService.login.subscribe((status) => {
-    //     this.isUserLoggedIn = status; //jxJs subject trigger'dan dönen observable'ı aldım.
-    //   });
-    // } else {
-    //   if (localStorage.getItem('user')) {
-    //     this.isUserLoggedIn = true;
-    //   } else {
-    //     this.isUserLoggedIn = null;
-    //   }
-    // }
+    console.log(`Login status on Sidebar : ${this.isUserLoggedIn}`);
   }
 }

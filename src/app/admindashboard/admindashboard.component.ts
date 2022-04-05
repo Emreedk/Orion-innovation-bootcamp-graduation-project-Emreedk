@@ -18,9 +18,6 @@ export class AdmindashboardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // if (this.router.url.includes('/admin')) {
-    //   this.userService.url.next(true);
-    // }
     this.userService.url.next(true);
   }
 

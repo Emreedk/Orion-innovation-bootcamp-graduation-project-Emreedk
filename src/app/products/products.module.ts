@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ProductsRoutingModule } from './products-routing.module';
-import { AddProductComponent } from './add-product/add-product.component';
-import { UpdateProductComponent } from './update-product/update-product.component';
+
 import { ViewAllProductComponent } from './view-all-product/view-all-product.component';
 import { ViewProductComponent } from './view-product/view-product.component';
 import { ViewProductByCategoryComponent } from './view-product-by-category/view-product-by-category.component';
@@ -14,8 +13,6 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    AddProductComponent,
-    UpdateProductComponent,
     ViewAllProductComponent,
     ViewProductComponent,
     ViewProductByCategoryComponent,
