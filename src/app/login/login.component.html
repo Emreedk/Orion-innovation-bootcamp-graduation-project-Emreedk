@@ -1,4 +1,54 @@
-<body class="text-center">
+<div class="special">
+  <section id="content">
+    <form [formGroup]="loginForm" (submit)="onSubmit()">
+      <h1>Login</h1>
+      <span class="text-danger" *ngIf="errorMessage">{{ errorMessage }} </span>
+      <div>
+        <input type="text" placeholder="Email" [formControlName]="'email'" />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          loginForm.get('email')!.hasError('required') &&
+          loginForm.get('email').touched
+        "
+        >Email is required
+      </span>
+      <span
+        class="text-danger"
+        *ngIf="
+          loginForm.get('email')!.hasError('email') &&
+          loginForm.get('email').touched
+        "
+        >Please enter an email address.
+      </span>
+      <div>
+        <input
+          type="password"
+          placeholder="Password"
+          [formControlName]="'password'"
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          loginForm.get('password')!.hasError('required') &&
+          loginForm.get('password').touched
+        "
+        >password is required
+      </span>
+      <div>
+        <input type="submit" value="Log in" />
+        <a routerLink="/register">Register</a>
+      </div>
+    </form>
+    <!-- form -->
+  </section>
+  <!-- content -->
+</div>
+<!-- container -->
+
+<!-- <body class="text-center">
   <main class="form-signin">
     <form [formGroup]="loginForm" (submit)="onSubmit()">
       <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
@@ -54,4 +104,4 @@
       <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
     </form>
   </main>
-</body>
+</body> -->

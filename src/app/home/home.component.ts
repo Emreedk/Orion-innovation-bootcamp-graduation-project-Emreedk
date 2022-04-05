@@ -15,10 +15,8 @@ export class HomeComponent implements OnInit {
   }
   onLogin() {
     this.router.navigate(['login']);
-    this.userService.login.next(false);
   }
   onRegister() {
     this.router.navigate(['register']);
-    this.userService.login.next(false);
   }
 }

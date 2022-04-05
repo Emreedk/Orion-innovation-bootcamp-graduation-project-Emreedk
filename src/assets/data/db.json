@@ -144,6 +144,17 @@
         "JWTToken": "dşgşsdhgp556wuşegwweyrp8wehrwerwer4543573ı4ht4289yt23t"
       },
       "id": 3
+    },
+    {
+      "user": {
+        "name": "user1",
+        "surname": "user1",
+        "email": "user1@user.com",
+        "password": "User123",
+        "isAdmin": 0,
+        "JWTToken": "dşgşsdhgp556wuşegwweyrp8wehrwerwer4543573ı4ht4289yt23t"
+      },
+      "id": 4
     }
   ],
   "carts": [],

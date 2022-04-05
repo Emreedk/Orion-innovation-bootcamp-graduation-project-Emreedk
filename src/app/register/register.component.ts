@@ -36,6 +36,7 @@ export class RegisterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.userDataService.login.next(false);
     this.registerForm = new FormGroup(
       {
         name: new FormControl(null, [Validators.required]),
