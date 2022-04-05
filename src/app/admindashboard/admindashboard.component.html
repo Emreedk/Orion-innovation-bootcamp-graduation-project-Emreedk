@@ -1,0 +1,68 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'push' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <div class="list-group">
+        <button
+          class="list-group-item"
+          routerLink="productlist"
+          routerLinkActive="active"
+        >
+          Product List
+        </button>
+        <button
+          class="list-group-item"
+          routerLink="userlist"
+          routerLinkActive="active"
+        >
+          User List
+        </button>
+        <button
+          class="list-group-item"
+          routerLink="categorylist"
+          routerLinkActive="active"
+        >
+          Category List
+        </button>
+        <button
+          class="list-group-item"
+          routerLink="addproduct"
+          routerLinkActive="active"
+        >
+          Add Product
+        </button>
+        <a class="list-group-item text-center" href="/products">Back to Site</a>
+        <!-- <button
+          class="list-group-item"
+          routerLink="/products"
+          routerLinkActive="active"
+        >
+          Back to Site
+        </button> -->
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="bg-dark">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="text-white">Orion Shop Admin Dashboard</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

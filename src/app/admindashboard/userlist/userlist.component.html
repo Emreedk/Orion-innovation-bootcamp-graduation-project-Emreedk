@@ -1,0 +1,29 @@
+<ng-container>
+  <h2>User List</h2>
+  <div class="container">
+    <div class="card-table">
+      <div class="cart-product">
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Surname</th>
+              <th>Email</th>
+              <th>isAdmin</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of userList">
+              <td>{{ user.id }}</td>
+              <td>{{ user.user.name }}</td>
+              <td>{{ user.user.surname }}</td>
+              <td>{{ user.user.email }}</td>
+              <td>{{ user.user.isAdmin }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</ng-container>
