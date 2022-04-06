@@ -1,4 +1,4 @@
-# 4. Hafta Ödevi
+# Orion Innovation Bootcamp Graduation Project
 
 ## You can reach the project description video by clicking on the link below.
 
