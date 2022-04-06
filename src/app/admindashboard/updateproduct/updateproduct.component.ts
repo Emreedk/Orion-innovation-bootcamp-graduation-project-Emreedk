@@ -64,7 +64,7 @@ export class UpdateproductComponent implements OnInit, BaseComponent {
       categoryId: this.updateProductForm.get('categoryId').value,
       productImg: this.updateProductForm.get('productImg').value,
       description: this.updateProductForm.get('description').value,
-      price: this.updateProductForm.get('price').value,
+      price: Number(this.updateProductForm.get('price').value),
     };
     this.productService.delete.next(true);
 

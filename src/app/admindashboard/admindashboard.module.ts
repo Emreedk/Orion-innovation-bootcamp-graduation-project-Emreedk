@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdmindashboardRoutingModule } from './admindashboard-routing.module';
 import { AdmindashboardComponent } from './admindashboard.component';
-import { DashboardbodyComponent } from './dashboardbody/dashboardbody.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
@@ -24,7 +23,6 @@ import { UpdateproductComponent } from './updateproduct/updateproduct.component'
 @NgModule({
   declarations: [
     AdmindashboardComponent,
-    DashboardbodyComponent,
     ProductlistComponent,
     UserlistComponent,
     CategorylistComponent,

@@ -5,7 +5,7 @@
       "categoryId": 2,
       "productImg": "shirt1.jpg",
       "description": "Goodthreads' collection of men's clothing crafted with care takes wear-everywhere apparel to the next level. Create can't-miss pairings with long- and short-sleeve",
-      "price": "44.99",
+      "price": 44.99,
       "id": 1
     },
     {
@@ -13,7 +13,7 @@
       "categoryId": 2,
       "productImg": "shirt2.jpg",
       "description": "CLASSIC WORKWEAR: This relaxed fit button-front work shirt features long sleeves, twin button-flap chest pockets & matching melamine buttons. It's made of a sturdy, machine washable cotton/poly blend of easy care stain release wrinkle-resistant fabric.",
-      "price": "33.33",
+      "price": 33.33,
       "id": 2
     },
     {
@@ -81,12 +81,20 @@
       "productImg": "samsung.jpg"
     },
     {
-      "name": "sample product",
+      "name": "sample product edited",
       "categoryId": "4",
       "productImg": "noproduct.jpg",
       "description": "sample product description",
-      "price": "123",
+      "price": 123,
       "id": 11
+    },
+    {
+      "name": "asfasfasfasfas",
+      "categoryId": "2",
+      "productImg": "noproduct.jpg",
+      "description": "safasfasfafasfasfsaf",
+      "price": 222,
+      "id": 12
     }
   ],
   "categories": [
@@ -158,23 +166,5 @@
     }
   ],
   "carts": [],
-  "orders": [
-    [
-      {
-        "productId": 4,
-        "cartId": 1,
-        "userId": 1
-      },
-      {
-        "productId": 2,
-        "cartId": 2,
-        "userId": 1
-      },
-      {
-        "productId": 1,
-        "cartId": 3,
-        "userId": 1
-      }
-    ]
-  ]
+  "orders": []
 }

@@ -32,6 +32,7 @@ export class CartComponent implements OnInit {
         }
       });
       this.orderList = newOrderList;
+      console.log(this.orderList);
     });
   }
 
@@ -66,7 +67,6 @@ export class CartComponent implements OnInit {
     this.orderList.forEach((orderListElement) => {
       const userOrders = {
         productId: orderListElement.productId,
-        cartId: orderListElement.id,
         userId: orderListElement.userId,
       };
 

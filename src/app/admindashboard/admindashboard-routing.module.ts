@@ -4,7 +4,6 @@ import { UnsavedguardService } from '../guards/unsavedguard.service';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { AdmindashboardComponent } from './admindashboard.component';
 import { CategorylistComponent } from './categorylist/categorylist.component';
-import { DashboardbodyComponent } from './dashboardbody/dashboardbody.component';
 import { ProductlistComponent } from './productlist/productlist.component';
 import { UpdateproductComponent } from './updateproduct/updateproduct.component';
 import { UserlistComponent } from './userlist/userlist.component';
@@ -16,7 +15,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: DashboardbodyComponent,
+        component: ProductlistComponent,
       },
       {
         path: 'productlist',

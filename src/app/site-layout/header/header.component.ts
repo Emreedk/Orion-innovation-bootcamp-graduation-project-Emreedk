@@ -50,7 +50,7 @@ export class HeaderComponent implements OnInit {
   onLogOut() {
     localStorage.removeItem('user');
     this.userDataService.login.next(false);
-    this.router.navigate(['/home']);
+    this.router.navigate(['/login']);
   }
 
   search(data: any) {
