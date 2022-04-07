@@ -23,7 +23,7 @@ export class HomeGuardService implements CanActivate {
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree> {
     if (localStorage.getItem('user')) {
-      this.router.navigate(['/products']);
+      this.router.navigate(['/products']); //don't allow routing if already login
       return false;
     } else {
       return true;

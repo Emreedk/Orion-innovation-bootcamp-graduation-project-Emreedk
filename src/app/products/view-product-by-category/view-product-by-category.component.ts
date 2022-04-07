@@ -28,6 +28,7 @@ export class ViewProductByCategoryComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    //RxJs subject trigger for change language
     this.userService.language.subscribe((data) => {
       if (data == true) {
         this.transloco.setActiveLang('tr');

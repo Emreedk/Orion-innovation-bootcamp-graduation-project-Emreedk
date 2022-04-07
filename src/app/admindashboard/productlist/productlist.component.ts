@@ -14,19 +14,21 @@ export class ProductlistComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllProduct();
+    //subscribe subject for snapshot
     this.productService.delete.subscribe((data) => {
       this.getAllProduct();
     });
   }
+  //call observable method for item deletion
   deleteProduct(productId) {
     this.productService.deleteProduct(productId).subscribe((deletedData) => {
-      this.productService.delete.next(true);
+      this.productService.delete.next(true); //RxJS subject trigger for snapshot
     });
   }
-
+  //call observable method to list products
   getAllProduct() {
     this.productService.viewAllProduct().subscribe((data) => {
-      this.productList = data;
+      this.productList = data; //assign data from observable to variable
     });
   }
 }

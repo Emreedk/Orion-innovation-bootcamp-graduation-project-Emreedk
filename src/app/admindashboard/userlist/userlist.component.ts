@@ -11,6 +11,7 @@ export class UserlistComponent implements OnInit {
   constructor(private userService: UserDataService) {}
 
   ngOnInit(): void {
+    //call observable method to list users
     this.userService.getData().subscribe((data) => {
       this.userList = data;
       console.log(data);

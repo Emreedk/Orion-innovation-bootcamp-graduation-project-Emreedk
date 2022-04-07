@@ -22,9 +22,9 @@ export class AdminguardService implements CanActivate {
     | UrlTree
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree> {
-    if (JSON.parse(this.loginUser)?.id !== 1) {
+    if (JSON.parse(this.loginUser)?.isAdmin !== 1) {
       this.router.navigate(['/products']);
-      return false;
+      return false; //don't allow routing if not admin
     } else {
       return true;
     }

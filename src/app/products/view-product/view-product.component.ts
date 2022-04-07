@@ -30,6 +30,7 @@ export class ViewProductComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    //RxJs subject trigger for change language
     this.userService.language.subscribe((data) => {
       if (data == true) {
         this.transloco.setActiveLang('tr');
@@ -38,23 +39,28 @@ export class ViewProductComponent implements OnInit {
       }
     });
 
+    //catch product id from page with params
     this.activatedRoute.params.subscribe((data) => {
       this.productID = data['id'];
     });
+
+    //pull the product according to the incoming id and assign it to the variable
     this.productService.viewProduct(this.productID).subscribe((viewData) => {
       this.productData = viewData;
     });
 
+    //call observable method to list all products
     this.productService.viewAllProduct().subscribe((data) => {
       this.productList = data;
     });
 
     this.loginUser = localStorage.getItem('user');
-
+    //assign based on logged in user id
     if (JSON.parse(this.loginUser).id === 1) {
       this.isAdmin = true;
     }
   }
+  //add product to cart
   addtoCart(productId) {
     this.productList.forEach((product) => {
       if (product.id == productId) {
@@ -73,6 +79,7 @@ export class ViewProductComponent implements OnInit {
     this.cartService.addtoCart(userCart).subscribe((response) => {});
   }
 
+  //call observable method for item deletion
   deleteProduct(productId) {
     this.productService.deleteProduct(productId).subscribe((deletedData) => {
       this.router.navigate(['/products']);

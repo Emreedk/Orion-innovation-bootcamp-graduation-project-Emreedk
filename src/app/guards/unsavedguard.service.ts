@@ -24,7 +24,7 @@ export class UnsavedguardService implements CanDeactivate<BaseComponent> {
     | UrlTree
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree> {
-    return component.isFormValid()
+    return component.isFormValid() //don't allow route and show error message if unsaved change
       ? true
       : window.confirm('You have unsaved changes. Leave?');
   }

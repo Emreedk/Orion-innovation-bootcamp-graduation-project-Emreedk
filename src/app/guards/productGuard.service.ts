@@ -27,7 +27,7 @@ export class productGuardService implements CanActivate {
     if (localStorage.getItem('user')) {
       return true;
     } else {
-      this.router.navigate(['']);
+      this.router.navigate(['']); //don't allow routing if not login
       return false;
     }
   }

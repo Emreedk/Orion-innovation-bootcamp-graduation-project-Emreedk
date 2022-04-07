@@ -21,6 +21,7 @@ export class SidebarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // subscribe to observable method to get data and assign to variable
     this.productService.getCategory().subscribe((data) => {
       this.categoryList = data;
     });
@@ -33,8 +34,7 @@ export class SidebarComponent implements OnInit {
       this.urlStatus = data;
     });
 
-    console.log(`Login status on Sidebar : ${this.isUserLoggedIn}`);
-
+    //RxJs subject trigger for change language
     this.userDataService.language.subscribe((data) => {
       if (data == true) {
         this.transloco.setActiveLang('tr');

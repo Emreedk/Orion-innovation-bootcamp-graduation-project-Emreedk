@@ -15,7 +15,7 @@ export class UpdateproductComponent implements OnInit, BaseComponent {
   updateProductForm: FormGroup;
   productDetails: Product;
   isFormSubmitted = false;
-  isFormValid = () => this.isFormSubmitted || !this.updateProductForm?.dirty;
+  isFormValid = () => this.isFormSubmitted || !this.updateProductForm?.dirty; //for unsaved change alert
   constructor(
     private activatedRoute: ActivatedRoute,
     private productService: ProductService,
@@ -23,6 +23,7 @@ export class UpdateproductComponent implements OnInit, BaseComponent {
   ) {}
 
   ngOnInit(): void {
+    //create reactive form and define validations
     this.updateProductForm = new FormGroup({
       name: new FormControl(null, [
         Validators.required,
@@ -40,6 +41,7 @@ export class UpdateproductComponent implements OnInit, BaseComponent {
     });
 
     this.activatedRoute.params.subscribe((data) => {
+      //fetch data and submit changes based on incoming product id
       this.productId = data['id'];
 
       this.productService
@@ -48,6 +50,7 @@ export class UpdateproductComponent implements OnInit, BaseComponent {
           this.productDetails = productData;
 
           this.updateProductForm.patchValue({
+            //add the data from the database to the inputs as a default value
             name: this.productDetails.name,
             categoryId: this.productDetails.categoryId,
             productImg: this.productDetails.productImg,
@@ -58,7 +61,8 @@ export class UpdateproductComponent implements OnInit, BaseComponent {
     });
   }
   onSubmit() {
-    this.isFormSubmitted = true;
+    this.isFormSubmitted = true; //for unsaved change alert
+    //Process the data from the form and save it to the database
     const updateProduct = {
       name: this.updateProductForm.get('name').value,
       categoryId: this.updateProductForm.get('categoryId').value,
@@ -66,13 +70,13 @@ export class UpdateproductComponent implements OnInit, BaseComponent {
       description: this.updateProductForm.get('description').value,
       price: Number(this.updateProductForm.get('price').value),
     };
-    this.productService.delete.next(true);
+    this.productService.delete.next(true); //RxJS subject trigger for snapshot
 
     this.productService
       .updateProduct(this.productId, updateProduct)
       .subscribe((data) => {
         console.log(data);
       });
-    this.router.navigate(['/admindashboard/productlist']);
+    this.router.navigate(['/admindashboard/productlist']); //route after the process is complete
   }
 }

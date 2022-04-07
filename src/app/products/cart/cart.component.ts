@@ -22,6 +22,7 @@ export class CartComponent implements OnInit {
       this.getCart();
     });
 
+    //match the logged in user with the user who has the products in the cart and add the matching products to the sales list
     this.cartService.getCarts().subscribe((cartItems) => {
       const newOrderList = [];
       cartItems.forEach((orderElement) => {
@@ -37,6 +38,7 @@ export class CartComponent implements OnInit {
   }
 
   onDelete(cartItemId) {
+    //call observable method to delete cart items
     this.cartService.deleteCartItem(cartItemId).subscribe((deletedData) => {
       this.cartService.cartCountMinus.next(true);
       this.totalPrices();
@@ -47,6 +49,7 @@ export class CartComponent implements OnInit {
   }
 
   getCart() {
+    //call observable method to list cart items
     this.cartService.getCarts().subscribe((cartData) => {
       this.userCart = [];
 
@@ -62,7 +65,7 @@ export class CartComponent implements OnInit {
   }
 
   getBuy() {
-    // console.log(this.orderList);
+    // deleting the products in the cart after the purchase
     const newUserOrders = [];
     this.orderList.forEach((orderListElement) => {
       const userOrders = {
@@ -79,6 +82,7 @@ export class CartComponent implements OnInit {
   }
 
   totalPrices() {
+    //Calculate the total product price in the cart
     this.totalPrice = 0;
     this.cartService.getCarts().subscribe((res) => {
       res.forEach((element) => {

@@ -12,13 +12,12 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class AdmindashboardComponent implements OnInit {
   constructor(
-    private router: Router,
     private userService: UserDataService,
     private breakpointObserver: BreakpointObserver
   ) {}
 
   ngOnInit(): void {
-    this.userService.url.next(true);
+    this.userService.url.next(true); //RxJs subject trigger for hiding main sidebar and navbar
   }
 
   isHandset$: Observable<boolean> = this.breakpointObserver

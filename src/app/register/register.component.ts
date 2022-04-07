@@ -36,7 +36,8 @@ export class RegisterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.userDataService.login.next(false);
+    this.userDataService.login.next(false); //RxJS trigger for login control
+    //create reactive form and define validations
     this.registerForm = new FormGroup(
       {
         name: new FormControl(null, [Validators.required]),
@@ -53,7 +54,9 @@ export class RegisterComponent implements OnInit {
       }
     );
   }
+
   onSubmit() {
+    //get form values and create new user
     if (this.registerForm.valid) {
       const registerUser = {
         name: this.registerForm.get('name').value,
@@ -63,7 +66,7 @@ export class RegisterComponent implements OnInit {
         isAdmin: 0,
         JWTToken: 'dşgşsdhgp556wuşegwweyrp8wehrwerwer4543573ı4ht4289yt23t',
       };
-      console.log(registerUser);
+
       this.userDataService.postData(registerUser).subscribe((response) => {
         this.router.navigate(['/login']);
       });

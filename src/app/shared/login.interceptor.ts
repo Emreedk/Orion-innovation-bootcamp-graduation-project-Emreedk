@@ -20,6 +20,7 @@ export class LoginInterceptor implements HttpInterceptor {
     if (!user) {
       return next.handle(request);
     }
+    //Set user owned JWT token for use in http requests
     const newRequest = request.clone({
       params: new HttpParams().set('JWT', user.user.JWTToken),
     });

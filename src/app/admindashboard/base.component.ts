@@ -1,3 +1,3 @@
 export interface BaseComponent {
-  isFormValid: () => boolean;
+  isFormValid: () => boolean; //for unsaved change alert
 }

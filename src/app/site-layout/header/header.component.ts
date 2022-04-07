@@ -27,14 +27,13 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // subscribe to observable method to get data and assign to variable
     this.userDataService.login.subscribe((data) => {
       this.isUserLoggedIn = data;
     });
-    console.log(`Login status on header : ${this.isUserLoggedIn}`);
 
     this.userDataService.isAdmin.subscribe((data) => {
       this.isAdmin = data;
-      console.log(`ìs admin : ${this.isAdmin}`);
     });
 
     this.userDataService.url.subscribe((data) => {
@@ -43,24 +42,27 @@ export class HeaderComponent implements OnInit {
 
     this.cartService.cartCount.subscribe((res) => {
       this.addToCart();
-      console.log(res);
     });
 
     this.cartService.cartCountMinus.subscribe((res) => {
       this.addToCart();
     });
   }
+
+  // to log out and clear local storage
   onLogOut() {
     localStorage.removeItem('user');
     this.userDataService.login.next(false);
     this.router.navigate(['/login']);
   }
 
+  // to move data in the search bar between components
   search(data: any) {
     this.searchText = (data.target as HTMLInputElement).value;
     this.productService.search.next(this.searchText);
   }
 
+  //The method that checks the counter when the product is added to the cart
   addToCart() {
     this.cartService.getCarts().subscribe((cartData) => {
       let newCartCount = 0;
@@ -74,6 +76,7 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  //Method that changes the selected language and triggers the subject depending on the button
   onTranslate() {
     if (this.transloco.getActiveLang() == 'en') {
       this.transloco.setActiveLang('tr');

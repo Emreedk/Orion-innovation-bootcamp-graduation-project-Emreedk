@@ -11,9 +11,9 @@ export class CategorylistComponent implements OnInit {
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
+    //subscribe observable method for listing
     this.productService.getCategory().subscribe((data) => {
       this.categoryList = data;
-      console.log(this.categoryList);
     });
   }
 }

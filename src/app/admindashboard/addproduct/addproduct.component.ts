@@ -12,11 +12,12 @@ import { BaseComponent } from '../base.component';
 export class AddproductComponent implements OnInit, BaseComponent {
   addProductForm: FormGroup;
   isFormSubmitted = false;
-  isFormValid = () => this.isFormSubmitted || !this.addProductForm?.dirty;
+  isFormValid = () => this.isFormSubmitted || !this.addProductForm?.dirty; //for unsaved change alert
 
   constructor(private productService: ProductService, private router: Router) {}
 
   ngOnInit(): void {
+    //create reactive form and define validations
     this.addProductForm = new FormGroup({
       name: new FormControl(null, [
         Validators.required,
@@ -32,9 +33,11 @@ export class AddproductComponent implements OnInit, BaseComponent {
       price: new FormControl(null, [Validators.required]),
     });
   }
+
   onSubmit() {
-    this.isFormSubmitted = true;
+    this.isFormSubmitted = true; //for unsaved change alert
     if (this.addProductForm.valid) {
+      //get form values and create a product object to send database
       const newProduct = {
         name: this.addProductForm.get('name').value,
         categoryId: this.addProductForm.get('categoryId').value,
@@ -42,12 +45,11 @@ export class AddproductComponent implements OnInit, BaseComponent {
         price: Number(this.addProductForm.get('price').value),
         productImg: 'noproduct.jpg',
       };
-      // console.log(newProduct);
+
       this.productService.createProduct(newProduct).subscribe((data) => {
-        console.log(data);
-        this.productService.delete.next(true);
+        this.productService.delete.next(true); //RxJS subject trigger for snapshot
       });
-      this.router.navigate(['admindashboard/productlist']);
+      this.router.navigate(['admindashboard/productlist']); //route after the process is complete
     }
   }
 }

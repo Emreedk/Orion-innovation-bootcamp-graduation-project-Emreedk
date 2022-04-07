@@ -26,22 +26,27 @@ export class ViewAllProductComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    //call observable method to list all products
     this.productService.viewAllProduct().subscribe((data) => {
       this.productList = data;
     });
 
+    //subscribe data from search input for filtering and assign to variable
     this.productService.search.subscribe((data: any) => {
       this.searchText = data;
     });
 
+    //assign user in local storage to variable
     this.loginUser = localStorage.getItem('user');
 
+    //RxJs subject trigger for change page view
     this.productService.viewStatus.subscribe((status) => {
       this.viewStatus = status;
     });
-
+    //RxJs subject trigger for hiding main sidebar and navbar
     this.userService.url.next(false);
 
+    //RxJs subject trigger for change language
     this.userService.language.subscribe((data) => {
       if (data == true) {
         this.transloco.setActiveLang('tr');
@@ -51,6 +56,7 @@ export class ViewAllProductComponent implements OnInit {
     });
   }
 
+  //add product to cart
   addtoCart(productId) {
     this.productList.forEach((product) => {
       if (product.id == productId) {
@@ -72,14 +78,12 @@ export class ViewAllProductComponent implements OnInit {
     });
   }
 
+  //change the page view
   changeView() {
     if (this.viewStatus) {
       this.productService.viewStatus.next(false);
-      console.log(this.viewStatus);
     } else {
       this.productService.viewStatus.next(true);
-
-      console.log(this.viewStatus);
     }
   }
 }
