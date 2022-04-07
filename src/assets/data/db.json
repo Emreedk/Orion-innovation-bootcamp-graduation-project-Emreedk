@@ -79,22 +79,6 @@
       "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
       "price": 500,
       "productImg": "samsung.jpg"
-    },
-    {
-      "name": "sample product edited",
-      "categoryId": "4",
-      "productImg": "noproduct.jpg",
-      "description": "sample product description",
-      "price": 123,
-      "id": 11
-    },
-    {
-      "name": "asfasfasfasfas",
-      "categoryId": "2",
-      "productImg": "noproduct.jpg",
-      "description": "safasfasfafasfasfsaf",
-      "price": 222,
-      "id": 12
     }
   ],
   "categories": [
@@ -141,28 +125,6 @@
         "JWTToken": "dşgşsdhgp556wuşegwweyrp8wehrwerwer4543573ı4ht4289yt23t"
       },
       "id": 2
-    },
-    {
-      "user": {
-        "name": "onur",
-        "surname": "onur",
-        "email": "onur@gmail.com",
-        "password": "Onur123",
-        "isAdmin": 0,
-        "JWTToken": "dşgşsdhgp556wuşegwweyrp8wehrwerwer4543573ı4ht4289yt23t"
-      },
-      "id": 3
-    },
-    {
-      "user": {
-        "name": "user1",
-        "surname": "user1",
-        "email": "user1@user.com",
-        "password": "User123",
-        "isAdmin": 0,
-        "JWTToken": "dşgşsdhgp556wuşegwweyrp8wehrwerwer4543573ı4ht4289yt23t"
-      },
-      "id": 4
     }
   ],
   "carts": [],

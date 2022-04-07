@@ -1,8 +1,8 @@
 # Orion Innovation Bootcamp Graduation Project
 
-## You can reach the project description video by clicking on the link below.
+# You can reach the project description video by clicking on the link below.
 
-("https://youtu.be/IIznXYwROUg")
+## ("https://youtu.be/b8bwKFagqmo")
 
 ## Installation
 
@@ -30,20 +30,56 @@ ng serve --o
 npm run server
 ```
 
-I used json-server for native API. "https://github.com/typicode/json-server" If you want to test the project, you can install the node_modules files with the npm install command and run the project with "ng serve". Then, to run json-server, in a different terminal, you must first go to the data folder where the api is located (cd src/assets/data) and use the command "json-server --watch db.json".
+### To login as an admin;
+
+e-mail: admin@admin.com
+password : Admin123
+
+### To log in as a user;
+
+e-mail: user@user.com
+password: User123
 
 ## About Project
 
-This Project is Patika-Orion Innovation Turkey Angular Bootcamp assignment. In this project, I created an e-commerce clone. Package and Modules used in the project.
+This Project is Patika-Orion Innovation Turkey Angular Bootcamp graduation project. In this project, I created an e-commerce clone.
+
+## Features
+
+### ECommerce App Core Functionalities
+
+- User Authentication
+- Validations for user-friendly design
+- Restricted access to access the products
+- Displaying products
+- Searching products by product name
+- Filtering products by category - Available through sidebar
+- Adding products to basket
+- Creating order after reviewing the basket
+- Admin dashboard
+- CRUD operations ( create, read, update , delete )
+- Multi-language support (english - turkish)
+
+# Package and Modules
 
 - AppRoutingModule
 - HttpClientModule
 - FormsModule
+- RouterModule
 - ReactiveFormsModule
 - Font Awesome
-- Bootstrap 5
-- Google Fonts
+- Bootstrap
 - AuthGuard
+- Interceptors
+- Transloco
+
+# Tech Stack
+
+- Angular 13
+- TypeScript
+- SCSS
+- RxJS
+- Angular Material
 
 # Orion Innovation Angular/Frontend Bootcamp Bitirme Projesi
 

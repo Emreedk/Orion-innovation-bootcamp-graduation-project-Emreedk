@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
             } else {
               this.userDataService.isAdmin.next(false);
             }
-            localStorage.setItem('user', JSON.stringify(user));
+            localStorage.setItem('user', JSON.stringify(user)); //Set LocalStorage
             this.loginForm.reset();
             this.userDataService.login.next(true); //rxJs subject trigger
             this.router.navigate(['/products']);

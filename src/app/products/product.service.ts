@@ -18,21 +18,6 @@ export class ProductService {
     return this.httpClient.post<Product>(baseUrl, productBody);
   }
 
-  // AllProduct() {
-  //   const baseUrl = 'http://localhost:3000/products/';
-  //   return this.httpClient.get<Product>(baseUrl).pipe(
-  //     map((response) => {
-  //       const newArray = [];
-  //       for (let key in response) {
-  //         if (response.hasOwnProperty(key)) {
-  //           newArray.push(response[key]);
-  //         }
-  //       }
-  //       return newArray;
-  //     })
-  //   );
-  // }
-
   viewProduct(productId): Observable<Product> {
     const baseUrl = 'http://localhost:3000/products/' + productId;
     return this.httpClient.get<Product>(baseUrl);
