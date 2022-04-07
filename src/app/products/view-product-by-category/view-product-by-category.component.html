@@ -1,4 +1,4 @@
-<h2>Showing Results By Category</h2>
+<h2>{{ "body.showing" | transloco }}</h2>
 
 <div class="row" *ngIf="productList && viewStatus">
   <div
@@ -26,7 +26,9 @@
       <div class="card-footer">
         <small class="text-muted">&#9733;&#9733;&#9733;&#9733;&#9734;</small>
       </div>
-      <a class="btn btn-info" (click)="addtoCart(product.id)">Add to Cart</a>
+      <a class="btn btn-info" (click)="addtoCart(product.id)">{{
+        "body.addtocart" | transloco
+      }}</a>
     </div>
   </div>
 </div>

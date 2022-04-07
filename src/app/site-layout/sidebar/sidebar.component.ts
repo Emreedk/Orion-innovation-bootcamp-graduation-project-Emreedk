@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslocoService } from '@ngneat/transloco';
 import { ProductService } from 'src/app/products/product.service';
 import { UserDataService } from 'src/app/services/user-data.service';
 import { Category } from '../category';
@@ -15,7 +16,8 @@ export class SidebarComponent implements OnInit {
   urlStatus: boolean;
   constructor(
     private productService: ProductService,
-    private userDataService: UserDataService
+    private userDataService: UserDataService,
+    private transloco: TranslocoService
   ) {}
 
   ngOnInit(): void {
@@ -32,5 +34,13 @@ export class SidebarComponent implements OnInit {
     });
 
     console.log(`Login status on Sidebar : ${this.isUserLoggedIn}`);
+
+    this.userDataService.language.subscribe((data) => {
+      if (data == true) {
+        this.transloco.setActiveLang('tr');
+      } else {
+        this.transloco.setActiveLang('en');
+      }
+    });
   }
 }

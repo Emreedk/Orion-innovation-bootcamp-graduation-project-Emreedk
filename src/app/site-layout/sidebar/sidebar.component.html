@@ -1,5 +1,5 @@
 <div *ngIf="isUserLoggedIn">
-  <h1 class="my4">Category List</h1>
+  <h1 class="my4">{{ "sidebar.catlist" | transloco }}</h1>
   <div class="list-group">
     <button
       class="list-group-item"
@@ -7,7 +7,7 @@
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: true }"
     >
-      View All Products
+      {{ "sidebar.allproduct" | transloco }}
     </button>
   </div>
 

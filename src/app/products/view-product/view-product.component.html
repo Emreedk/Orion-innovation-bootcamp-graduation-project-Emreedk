@@ -16,7 +16,7 @@
         *ngIf="isAdmin"
         class="btn btn-warning"
         [routerLink]="['/admindashboard/updateproduct/', productID]"
-        >Update Product</a
+        >{{ "body.update" | transloco }}</a
       >
       &nbsp;
       <button
@@ -24,7 +24,7 @@
         (click)="deleteProduct(productData?.id)"
         class="btn btn-danger"
       >
-        Delete Product
+        {{ "body.delete" | transloco }}
       </button>
       <h4>$ {{ productData?.price }}</h4>
       <p>{{ productData?.description }}</p>
@@ -33,7 +33,7 @@
       <br />
       <br />
       <button class="btn btn-info" (click)="addtoCart(productID)">
-        Add to Cart
+        {{ "body.addtocart" | transloco }}
       </button>
     </div>
   </div>
@@ -59,7 +59,7 @@
     </p>
     <small class="text-muted">Posted By Anonymous on 15.03.2022</small>
   </div>
-  <a class="btn btn-success">Leave a Review</a>
+  <a class="btn btn-success">{{ "body.review" | transloco }}</a>
 </div>
 
 <!--

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { TranslocoService } from '@ngneat/transloco';
 import { CartserviceService } from 'src/app/services/cartservice.service';
+import { UserDataService } from 'src/app/services/user-data.service';
 import { Category } from 'src/app/site-layout/category';
 import { ProductService } from '../product.service';
 
@@ -20,10 +22,20 @@ export class ViewProductByCategoryComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private productService: ProductService,
     private cartService: CartserviceService,
-    private router: Router
+    private router: Router,
+    private transloco: TranslocoService,
+    private userService: UserDataService
   ) {}
 
   ngOnInit(): void {
+    this.userService.language.subscribe((data) => {
+      if (data == true) {
+        this.transloco.setActiveLang('tr');
+      } else {
+        this.transloco.setActiveLang('en');
+      }
+    });
+
     this.activatedRoute.params.subscribe((data: Params) => {
       this.searchCategory = data['id'];
 

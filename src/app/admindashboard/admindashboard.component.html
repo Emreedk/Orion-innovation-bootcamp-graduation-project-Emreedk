@@ -15,32 +15,32 @@
           routerLink="productlist"
           routerLinkActive="active"
         >
-          Product List
+          {{ "header.productlist" | transloco }}
         </button>
         <button
           class="list-group-item"
           routerLink="userlist"
           routerLinkActive="active"
         >
-          User List
+          {{ "header.userlist" | transloco }}
         </button>
         <button
           class="list-group-item"
           routerLink="categorylist"
           routerLinkActive="active"
         >
-          Category List
+          {{ "header.categorylist" | transloco }}
         </button>
         <button
           class="list-group-item"
           routerLink="addproduct"
           routerLinkActive="active"
         >
-          Add Product
+          {{ "header.add" | transloco }}
         </button>
-        <a class="list-group-item text-center bg-danger" href="/products"
-          >Back to Site</a
-        >
+        <a class="list-group-item text-center bg-danger" href="/products">{{
+          "header.backtosite" | transloco
+        }}</a>
       </div>
     </mat-nav-list>
   </mat-sidenav>
@@ -55,7 +55,7 @@
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span class="text-white">Orion Shop Admin Dashboard</span>
+      <span class="text-white">{{ "header.title" | transloco }}</span>
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>

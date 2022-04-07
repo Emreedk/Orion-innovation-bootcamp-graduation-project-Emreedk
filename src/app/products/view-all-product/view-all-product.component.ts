@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslocoService } from '@ngneat/transloco';
 import { CartserviceService } from 'src/app/services/cartservice.service';
 import { UserDataService } from 'src/app/services/user-data.service';
 import { ProductService } from '../product.service';
@@ -21,7 +22,7 @@ export class ViewAllProductComponent implements OnInit {
     private productService: ProductService,
     private cartService: CartserviceService,
     private userService: UserDataService,
-    private router: Router
+    private transloco: TranslocoService
   ) {}
 
   ngOnInit(): void {
@@ -41,7 +42,13 @@ export class ViewAllProductComponent implements OnInit {
 
     this.userService.url.next(false);
 
-    // window.location.reload();
+    this.userService.language.subscribe((data) => {
+      if (data == true) {
+        this.transloco.setActiveLang('tr');
+      } else {
+        this.transloco.setActiveLang('en');
+      }
+    });
   }
 
   addtoCart(productId) {

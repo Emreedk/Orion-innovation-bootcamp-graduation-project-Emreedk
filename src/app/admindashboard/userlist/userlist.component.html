@@ -1,5 +1,5 @@
 <ng-container>
-  <h2>User List</h2>
+  <h2 class="text-center">{{ "body.userlist" | transloco }}</h2>
   <div class="container">
     <div class="card-table">
       <div class="cart-product">
@@ -7,10 +7,10 @@
           <thead>
             <tr>
               <th>Id</th>
-              <th>Name</th>
-              <th>Surname</th>
-              <th>Email</th>
-              <th>isAdmin</th>
+              <th>{{ "body.name" | transloco }}</th>
+              <th>{{ "body.surname" | transloco }}</th>
+              <th>{{ "body.email" | transloco }}</th>
+              <th>{{ "body.isadmin" | transloco }}</th>
             </tr>
           </thead>
           <tbody>

@@ -19,6 +19,7 @@ import { UserlistComponent } from './userlist/userlist.component';
 import { CategorylistComponent } from './categorylist/categorylist.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { UpdateproductComponent } from './updateproduct/updateproduct.component';
+import { TranslocoModule } from '@ngneat/transloco';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { UpdateproductComponent } from './updateproduct/updateproduct.component'
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    TranslocoModule,
   ],
 })
 export class AdmindashboardModule {}

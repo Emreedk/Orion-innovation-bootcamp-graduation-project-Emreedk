@@ -5,11 +5,11 @@
         <table class="table table-responsive">
           <thead>
             <tr>
-              <th>Product Name</th>
-              <th>Product Image</th>
-              <th>Description</th>
-              <th>Price</th>
-              <th>Action</th>
+              <th>{{ "body.productname" | transloco }}</th>
+              <th>{{ "body.img" | transloco }}</th>
+              <th>{{ "body.description" | transloco }}</th>
+              <th>{{ "body.price" | transloco }}</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -34,9 +34,11 @@
           <tbody>
             <td></td>
             <td></td>
-            <td>Total Amount</td>
+            <td>{{ "body.total" | transloco }}</td>
             <td>${{ totalPrice }}</td>
-            <button class="btn btn-primary" (click)="getBuy()">Buy</button>
+            <button class="btn btn-primary" (click)="getBuy()">
+              {{ "body.buy" | transloco }}
+            </button>
           </tbody>
         </table>
       </div>
@@ -47,12 +49,13 @@
 <ng-container *ngIf="!isEmpty"
   ><div class="container">
     <div class="card">
-      <h5 class="card-title">My Cart</h5>
+      <h5 class="card-title">{{ "cart.mycart" | transloco }}</h5>
       <div class="center">
         <img class="center-img" src="../../../assets/img/cart.png" alt="" />
-        <h4>Your Cart is Empty</h4>
-        <h6>Back to Shopping</h6>
-        <button class="btn btn-primary" routerLink="/products">Shop Now</button>
+        <h4>{{ "cart.empty" | transloco }}</h4>
+        <button class="btn btn-primary" routerLink="/products">
+          {{ "cart.shopnow" | transloco }}
+        </button>
       </div>
     </div>
   </div></ng-container

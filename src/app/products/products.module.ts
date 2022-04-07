@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CartComponent } from './cart/cart.component';
 import { FilterPipe } from '../shared/filter.pipe';
 import { RouterModule } from '@angular/router';
+import { TranslocoModule } from '@ngneat/transloco';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    TranslocoModule,
   ],
 })
 export class ProductsModule {}

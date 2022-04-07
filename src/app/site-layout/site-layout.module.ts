@@ -4,10 +4,11 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
+import { TranslocoModule } from '@ngneat/transloco';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, SidebarComponent],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, TranslocoModule],
   exports: [HeaderComponent, FooterComponent, SidebarComponent],
 })
 export class SiteLayoutModule {}

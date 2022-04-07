@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CartserviceService } from 'src/app/services/cartservice.service';
 import { ProductService } from 'src/app/products/product.service';
 import { UserDataService } from 'src/app/services/user-data.service';
+import { TranslocoService } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-header',
@@ -14,13 +15,15 @@ export class HeaderComponent implements OnInit {
   isAdmin: boolean = true;
   public searchText!: string;
   loginUser;
+  searchPlaceHolder;
   cartCount: number = 0;
   urlStatus: boolean;
   constructor(
     private userDataService: UserDataService,
     private router: Router,
     private productService: ProductService,
-    private cartService: CartserviceService
+    private cartService: CartserviceService,
+    private transloco: TranslocoService
   ) {}
 
   ngOnInit(): void {
@@ -69,5 +72,15 @@ export class HeaderComponent implements OnInit {
       });
       this.cartCount = newCartCount;
     });
+  }
+
+  onTranslate() {
+    if (this.transloco.getActiveLang() == 'en') {
+      this.transloco.setActiveLang('tr');
+      this.userDataService.language.next(true);
+    } else {
+      this.transloco.setActiveLang('en');
+      this.userDataService.language.next(false);
+    }
   }
 }

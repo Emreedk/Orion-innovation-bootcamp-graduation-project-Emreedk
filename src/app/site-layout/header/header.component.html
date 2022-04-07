@@ -15,16 +15,21 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/products"
-            >Home</a
+          <a
+            class="nav-link active"
+            aria-current="page"
+            routerLink="/products"
+            >{{ "header.home" | transloco }}</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled-link">About</a>
+          <a class="nav-link disabled-link">{{ "header.about" | transloco }}</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link disabled-link">Contact</a>
+          <a class="nav-link disabled-link">{{
+            "header.contact" | transloco
+          }}</a>
         </li>
         <li class="nav-item dropdown" *ngIf="isAdmin == true">
           <a
@@ -34,28 +39,34 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Admin Options
+            {{ "header.admin" | transloco }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li>
-              <a class="dropdown-item" routerLink="/admindashboard/addproduct"
-                >Add Product</a
+              <a
+                class="dropdown-item"
+                routerLink="/admindashboard/addproduct"
+                >{{ "header.add" | transloco }}</a
               >
             </li>
             <li>
-              <a class="dropdown-item" routerLink="/admindashboard/productlist"
-                >Product List</a
+              <a
+                class="dropdown-item"
+                routerLink="/admindashboard/productlist"
+                >{{ "header.productlist" | transloco }}</a
               >
             </li>
             <li>
-              <a class="dropdown-item" routerLink="/admindashboard/userlist"
-                >User List</a
-              >
+              <a class="dropdown-item" routerLink="/admindashboard/userlist">{{
+                "header.userlist" | transloco
+              }}</a>
             </li>
             <div class="dropdown-divider"></div>
             <li>
-              <a class="dropdown-item" routerLink="/admindashboard/productlist"
-                >Go to Dashboard</a
+              <a
+                class="dropdown-item"
+                routerLink="/admindashboard/productlist"
+                >{{ "header.gotodash" | transloco }}</a
               >
             </li>
           </ul>
@@ -71,14 +82,24 @@
         </div>
       </ul>
     </div>
+
+    <button class="btn btn-warning" (click)="onTranslate()">
+      {{ "header.lang" | transloco }}
+      &nbsp;
+      <i class="fa-solid fa-language cart-size"></i>
+    </button>
+
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
     <a routerLink="/products/cart" class="btn btn-info">
       <i class="fas fa-cart-plus cart-size"></i>
       <div class="badge bg-danger badge-size">
         {{ cartCount }}
       </div>
-      &nbsp;Go To Cart
+      &nbsp;{{ "header.gotocart" | transloco }}
     </a>
     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-    <button class="btn btn-danger" (click)="onLogOut()">Log Out</button>
+    <button class="btn btn-danger" (click)="onLogOut()">
+      {{ "header.logout" | transloco }}
+    </button>
   </div>
 </nav>

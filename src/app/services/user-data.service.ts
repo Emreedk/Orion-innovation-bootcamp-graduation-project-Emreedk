@@ -9,6 +9,7 @@ export class UserDataService {
   login = new BehaviorSubject(true);
   url = new BehaviorSubject(false);
   isAdmin = new Subject<boolean>();
+  language = new BehaviorSubject(false);
 
   constructor(private httpClient: HttpClient) {}
 

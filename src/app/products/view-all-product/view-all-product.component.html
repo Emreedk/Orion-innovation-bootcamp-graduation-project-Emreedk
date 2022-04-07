@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-end">
   <button class="btn btn-outline-dark col-example" (click)="changeView()">
-    Change View
+    {{ "body.view" | transloco }}
   </button>
 </div>
 
@@ -31,7 +31,9 @@
       <div class="card-footer">
         <small class="text-muted">&#9733;&#9733;&#9733;&#9733;&#9734;</small>
       </div>
-      <a class="btn btn-info" (click)="addtoCart(product.id)">Add to Cart</a>
+      <a class="btn btn-info" (click)="addtoCart(product.id)">{{
+        "body.addtocart" | transloco
+      }}</a>
     </div>
   </div>
 </div>
@@ -43,11 +45,11 @@
         <table class="table table-responsive">
           <thead>
             <tr>
-              <th>Product Name</th>
-              <th>Product Image</th>
-              <th>Description</th>
-              <th>Price</th>
-              <th>Add to Cart</th>
+              <th>{{ "body.productname" | transloco }}</th>
+              <th>{{ "body.img" | transloco }}</th>
+              <th>{{ "body.description" | transloco }}</th>
+              <th>{{ "body.price" | transloco }}</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -67,7 +69,8 @@
               <td>{{ product.description }}</td>
               <td>${{ product.price }}</td>
               <a class="btn btn-info" (click)="addtoCart(product.id)">
-                <i class="fas fa-cart-plus cart-size"></i> Add to Cart
+                <i class="fas fa-cart-plus cart-size"></i
+                >{{ "body.addtocart" | transloco }}
               </a>
             </tr>
           </tbody>

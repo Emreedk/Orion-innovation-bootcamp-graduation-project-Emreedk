@@ -1,0 +1,65 @@
+{
+  "header": {
+    "home": "Anasayfa",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "admin": "Admin Seçenekleri",
+    "add": "Ürün Ekle",
+    "productlist": "Ürün Listesi",
+    "userlist": "Kullanıcı Listesi",
+    "categorylist": "Kategori Listesi",
+    "gotodash": "Panele Git",
+    "search": "Arama Yap",
+    "gotocart": "Sepete Git",
+    "logout": "Çıkış Yap",
+    "backtosite": "Siteye Dön",
+    "title": "Orion Shop Admin Paneli",
+    "lang": "TR"
+  },
+  "sidebar": {
+    "catlist": "Kategori Listesi",
+    "allproduct": "Tüm Ürünleri Gör"
+  },
+  "body": {
+    "view": "Görünümü Değiştir",
+    "addtocart": "Sepete Ekle",
+    "productname": "Ürün Adı",
+    "productlist": "Ürün Listesi",
+    "catlist": "Kategori Listesi",
+    "categoryname": "Kategori Adı",
+    "img": "Ürün Görseli",
+    "description": "Açıklama",
+    "price": "Fiyat",
+    "showing": "Kategoriye Göre Sonuçlar",
+    "review": "Görüş Bildir",
+    "update": "Ürünü Düzenle",
+    "delete": "Ürünü Sil",
+    "name": "Adı",
+    "surname": "Soyadı",
+    "email": "Email",
+    "isadmin": "Admin Yetkisi",
+    "userlist": "Kullanıcı Listesi",
+    "total": "Toplam Tutar",
+    "buy": "Satın Al"
+  },
+  "crud": {
+    "addnew": "Yeni Ürün Ekle",
+    "namereq": "Ürün Adı Boş Geçilemez",
+    "min5": "En Az 5 Karakter Girmelisiniz",
+    "catidreq": "Kategori ID Boş Geçilemez",
+    "productname": "Ürün Adı",
+    "catid": "Kategori ID",
+    "description": "Açıklama",
+    "descriptionreq": "Açıklama Boş Geçilemez",
+    "min15": "En Az 15 Karakter Girmelisiniz",
+    "price": "Ürün Fiyatı",
+    "pricereq": "Fiyat Boş Geçilemez",
+    "save": "Kaydet",
+    "img": "Ürün Görseli"
+  },
+  "cart": {
+    "empty": "Sepetinizde Ürün Bulunmamaktadır",
+    "shopnow": "Alışverişe Dön",
+    "mycart": "Sepetim"
+  }
+}
