@@ -1,6 +1,6 @@
 # Orion Innovation Bootcamp Graduation Project
 
-## You can reach the project description video by clicking on the link or image below.
+## You can reach the project explanation video by clicking on the link or image below.
 
 ### https://youtu.be/b8bwKFagqmo
 
